@@ -1,0 +1,13 @@
+<h1>Meus herois ({{mode}})</h1>
+
+<h3>Herois:</h3>
+
+<ul>
+  <li *ngFor="let hero of heroes">{{hero.name}}</li>
+</ul>
+
+<label>Digite seu heroi: <input #newHeroName /></label>
+
+<button (click)="addHero(newHeroName.value); newHeroName.value=''">Novo</button>
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
