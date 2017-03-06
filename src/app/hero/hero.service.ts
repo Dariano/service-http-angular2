@@ -1,3 +1,4 @@
+import { AuthHttp } from 'angular2-jwt';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -13,7 +14,7 @@ export class HeroService {
 
   private heroesUrl = 'http://localhost:3030/heroes/';  // URL to web API
 
-  constructor(private http: Http) { }
+  constructor(private http: AuthHttp) { }
 
   getHeroes(): Observable<Hero[]> {
     return this.http
